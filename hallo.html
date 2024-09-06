@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabut Source</title>
+    <link rel="stylesheet" href="css/hallo.css">
+   
+</head>
+<body >
+ 
+    <button class="btn" style="--clr:#007bff;">About &nbsp Me
+    </button>
+
+    <button class="btn" style="--clr:#ff0055;">Certificate</button>
+
+    <button class="btn" style="--clr:#b731e5;">Gallery</button>
+
+<script>
+    let buttons =document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        let text =button.textContent;
+        button.innerHTML= '';
+
+        for (let char of text) {
+            let span =document.createElement('span');
+            span.textContent =char===''?'\u00A0': char;
+            button.appendChild(span)
+        }
+        let spans = button.querySelectorAll('span');
+
+        button.addEventListener('mouseenter',  () =>{
+            spans.forEach((span,index)  => {
+                setTimeout(()   => {
+                    span.classList.add('hover');
+                }, index    *   50);
+            })
+        })
+
+        button.addEventListener('mouseleave',  () =>{
+            spans.forEach((span,index)  => {
+                setTimeout(()   => {
+                    span.classList.remove('hover');
+                }, index    *   50);
+            })
+        })
+    })
+</script>
+</body>
+</html>

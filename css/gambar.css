@@ -1,0 +1,34 @@
+*,html,body
+{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 30px;
+    background: #1c2630;
+}
+
+.div , img {
+    filter: saturate(100%);
+    width: 10%;
+    border: 50px ;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: all ease 0.3s;
+    cursor: pointer;
+
+}
+
+.div img-box, img:hover {
+    background: var(--clr);
+    box-shadow: 0 0 10px var(--clr);
+    width: 15%;
+    0 0 100px var(--clr);
+    0 0 150px var(--clr);
+}
